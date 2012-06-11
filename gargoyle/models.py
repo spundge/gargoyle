@@ -54,8 +54,8 @@ class Switch(models.Model):
     key = models.CharField(max_length=32, primary_key=True)
     value = JSONField(default="{}")
     label = models.CharField(max_length=32, null=True)
-    date_created = models.DateTimeField(default=datetime.datetime.now)
-    date_modified = models.DateTimeField(default=datetime.datetime.now)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
     description = models.TextField(null=True)
     status = models.PositiveSmallIntegerField(default=DISABLED, choices=STATUS_CHOICES)
 
